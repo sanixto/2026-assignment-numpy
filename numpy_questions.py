@@ -66,4 +66,8 @@ def wallis_product(n_terms):
     """
     # XXX : The n_terms is an int that corresponds to the number of
     # terms in the product. For example 10000.
-    return 0.
+    # Wallis formula: pi / 2 = product of (4 * n^2) / (4 * n^2 - 1)
+    n = np.arange(1, n_terms + 1, dtype=float)
+    terms = 4 * n**2 / (4 * n**2 - 1)
+
+    return 2 * float(np.prod(terms))
